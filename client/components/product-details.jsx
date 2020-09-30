@@ -37,17 +37,19 @@ class ProductDetails extends React.Component {
     const longDescription = this.state.product.longDescription;
     const shortDescription = this.state.product.shortDescription;
     return (
-      <div className="row justify-content-center d-flex">
-        <div className="col-11 d-flex flex-wrap border shadow-md justify-content-center p-3">
-          <div className="back-to-catalog col-12 mb-2" onClick={() => this.props.setView('catalog', {})}>&lt; Back to catalog</div>
-          <img src={image} alt={name} className="col-4 mb-2"></img>
-          <div className="col-8">
-            <h2>{name}</h2>
-            <h4>{this.formatPrice()}</h4>
-            <p>{shortDescription}</p>
-          </div>
-          <div className="col-11">
-            <div>{longDescription}</div>
+      <div className="d-flex justify-content-center w-100">
+        <div className="row d-flex justify-content-center mt-5">
+          <div className="col-11 d-flex flex-wrap border border-dark shadow-lg justify-content-center p-3 bg-white">
+            <div className="back-to-catalog col-12 mb-2 text-muted" onClick={() => this.props.setView('catalog', {})}>&lt; Back to catalog</div>
+            <img src={image} alt={name} className="col-6 mb-3"></img>
+            <div className="col-6">
+              <h2>{name}</h2>
+              <h4 className="text-muted">{this.formatPrice()}</h4>
+              <p>{shortDescription}</p>
+            </div>
+            <div className="row mb-4 mx-3">
+              <div>{longDescription}</div>
+            </div>
           </div>
         </div>
       </div>
