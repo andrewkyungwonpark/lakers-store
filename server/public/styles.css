@@ -29,3 +29,16 @@ body {
 .container {
   margin-left: 0;
 }
+
+.card:hover{
+  cursor: pointer;
+}
+
+.back-to-catalog:hover{
+  cursor: pointer;
+}
+
+.product-detail-img {
+  object-fit: scale-down;
+  width: 100%;
+}

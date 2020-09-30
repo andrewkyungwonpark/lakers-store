@@ -23,14 +23,19 @@ function ProductListItem(props) {
     justifyContent: 'center'
   };
 
+  const oldPrice = JSON.stringify(props.price);
+  const priceArray = oldPrice.split('');
+  priceArray.splice((priceArray.length - 2), 0, '.');
+  const newPrice = priceArray.join('');
+
   return (
-    <div className="card mt-3" style={imageSize}>
+    <div className="card mt-3" style={imageSize} onClick={() => props.setView('details', { productId: props.productId })}>
       <div className="row" style={imageContainer}>
-        <img src={props.image} className="card-img" style={imageCss}></img>
+        <img src={props.image} className="card-img product-detail-img" style={imageCss} id={props.productId}></img>
       </div>
       <div className="product-card-body">
         <h3 className="product-name">{props.name}</h3>
-        <h5 className="product-price">${(props.price / 100).toFixed(2)}</h5>
+        <h5 className="product-price">${newPrice}</h5>
         <p className="product-text">{props.shortDescription}</p>
       </div>
     </div>
