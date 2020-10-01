@@ -42,3 +42,7 @@ body {
   object-fit: scale-down;
   width: 100%;
 }
+
+.items {
+  color: white;
+}
