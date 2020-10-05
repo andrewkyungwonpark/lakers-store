@@ -1,14 +1,14 @@
 import React from 'react';
 import CartSummaryItem from './cart-summary-item';
 
-export default function CartSummary(items) {
-  if (items.cartItems) {
+export default function CartSummary(props) {
+  if (props.cartItems.length) {
     return (
       <>
-        <div className="back-to-catalog col-12 mb-2 text-muted" onClick={() => items.setView('catalog', {})}>&lt; Back to catalog</div>
+        <div className="back-to-catalog col-12 mb-2 text-muted" onClick={() => props.setView('catalog', {})}>&lt; Back to catalog</div>
         <h1>Cart Summary</h1>
         {
-          items.cartItems.map(item => {
+          props.cartItems.map(item => {
             return (
               <CartSummaryItem
                 key={item.productId}
@@ -26,7 +26,7 @@ export default function CartSummary(items) {
   } else {
     return (
       <>
-        <div className="back-to-catalog col-12 mb-2 text-muted" onClick={() => items.setView('catalog', {})}>&lt; Back to catalog</div>
+        <div className="back-to-catalog col-12 mb-2 text-muted" onClick={() => props.setView('catalog', {})}>&lt; Back to catalog</div>
         <h2 className="d-flex justify-content-center mt-5">Your cart is empty!</h2>
       </>
     );
