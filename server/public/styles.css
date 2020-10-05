@@ -46,3 +46,12 @@ body {
 .items {
   color: white;
 }
+
+.items:hover {
+  cursor: pointer;
+}
+
+.card-image {
+  object-fit: scale-down;
+  width: 75%
+}
