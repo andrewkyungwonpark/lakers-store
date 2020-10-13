@@ -105,31 +105,31 @@ export default class App extends React.Component {
   render() {
     if (this.state.view.name === 'catalog') {
       return (
-        <div className="container vw-100">
+        <>
           <Header text="Wicked Sales" cartItemCount={this.state.cart.length} setView={this.setView} />
           <ProductList setView={this.setView} />
-        </div>
+        </>
       );
     } else if (this.state.view.name === 'cart') {
       return (
-        <div className="container vw-100">
+        <>
           <Header text="Wicked Sales" cartItemCount={this.state.cart.length} setView={this.setView} />
           <CartSummary cartItems={this.state.cart} setView={this.setView} addToCart={this.addToCart} price={this.calculateTotal()}/>
-        </div>
+        </>
       );
     } else if (this.state.view.name === 'details') {
       return (
-        <div className="container vw-100">
+        <>
           <Header text="Wicked Sales" cartItemCount={this.state.cart.length} setView={this.setView} />
           <ProductDetails setView={this.setView} params={this.state.view.params} addToCart={this.addToCart} />
-        </div>
+        </>
       );
     } else if (this.state.view.name === 'checkout') {
       return (
-        <div className="container vw-100">
+        <>
           <Header text="Wicked Sales" cartItemCount={this.state.cart.length} setView={this.setView} />
           <CheckoutForm setView={this.setView} price={this.calculateTotal()} onSubmit={this.placeOrder} />
-        </div>
+        </>
       );
     }
   }
