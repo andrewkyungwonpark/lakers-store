@@ -47,7 +47,8 @@ body {
   color: white;
 }
 
-.items:hover {
+.items:hover,
+.continue-shopping:hover {
   cursor: pointer;
 }
 

@@ -3,6 +3,7 @@ import Header from './header';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
+import CheckoutForm from './checkout-form';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -17,6 +18,8 @@ export default class App extends React.Component {
     this.setView = this.setView.bind(this);
     this.getCartItems = this.getCartItems.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.placeOrder = this.placeOrder.bind(this);
+    this.calculateTotal = this.calculateTotal.bind(this);
   }
 
   setView(name, params) {
@@ -55,6 +58,46 @@ export default class App extends React.Component {
       });
   }
 
+  placeOrder(order) {
+    const name = order.name;
+    const creditCard = order.creditCard;
+    const shippingAddress = order.shippingAddress;
+
+    const post = {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: name,
+        creditCard: creditCard,
+        shippingAddress: shippingAddress
+      })
+    };
+
+    fetch('/api/orders', post)
+      .then(results => results.json())
+      .then(order => {
+        this.setState({
+          cart: [],
+          view: {
+            name: 'catalog',
+            params: {}
+          }
+        });
+      });
+  }
+
+  calculateTotal() {
+    if (this.state.cart.length) {
+      let total = 0;
+      for (let i = 0; i < this.state.cart.length; i++) {
+        total += this.state.cart[i].price;
+      }
+      return total;
+    }
+  }
+
   componentDidMount() {
     this.getCartItems();
   }
@@ -62,24 +105,31 @@ export default class App extends React.Component {
   render() {
     if (this.state.view.name === 'catalog') {
       return (
-        <div className="container">
+        <>
           <Header text="Wicked Sales" cartItemCount={this.state.cart.length} setView={this.setView} />
           <ProductList setView={this.setView} />
-        </div>
+        </>
       );
     } else if (this.state.view.name === 'cart') {
       return (
-        <div className="container">
+        <>
           <Header text="Wicked Sales" cartItemCount={this.state.cart.length} setView={this.setView} />
-          <CartSummary cartItems={this.state.cart} setView={this.setView} addToCart={this.addToCart} />
-        </div>
+          <CartSummary cartItems={this.state.cart} setView={this.setView} addToCart={this.addToCart} price={this.calculateTotal()}/>
+        </>
       );
     } else if (this.state.view.name === 'details') {
       return (
-        <div className="container">
+        <>
           <Header text="Wicked Sales" cartItemCount={this.state.cart.length} setView={this.setView} />
           <ProductDetails setView={this.setView} params={this.state.view.params} addToCart={this.addToCart} />
-        </div>
+        </>
+      );
+    } else if (this.state.view.name === 'checkout') {
+      return (
+        <>
+          <Header text="Wicked Sales" cartItemCount={this.state.cart.length} setView={this.setView} />
+          <CheckoutForm setView={this.setView} price={this.calculateTotal()} onSubmit={this.placeOrder} />
+        </>
       );
     }
   }

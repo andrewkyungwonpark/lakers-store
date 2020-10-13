@@ -21,13 +21,17 @@ export default function CartSummary(props) {
             );
           })
         }
+        <div className="cart-total d-flex flex-column">
+          <h3 className="mb-3">Your Total is ${((props.price) / 100).toFixed(2)}</h3>
+          <button className="btn btn-success" onClick={() => props.setView('checkout', {})}>Place Order</button>
+        </div>
       </>
     );
   } else {
     return (
       <>
         <div className="back-to-catalog col-12 mb-2 text-muted" onClick={() => props.setView('catalog', {})}>&lt; Back to catalog</div>
-        <h2 className="d-flex justify-content-center mt-5">Your cart is empty!</h2>
+        <h2 className="d-flex justify-content-center mt-5 vw-100">Your cart is empty!</h2>
       </>
     );
   }
