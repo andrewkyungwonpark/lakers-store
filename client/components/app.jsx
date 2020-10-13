@@ -106,28 +106,28 @@ export default class App extends React.Component {
     if (this.state.view.name === 'catalog') {
       return (
         <>
-          <Header text="Wicked Sales" cartItemCount={this.state.cart.length} setView={this.setView} />
+          <Header text="2020 Los Angeles Lakers Championship Store" cartItemCount={this.state.cart.length} setView={this.setView} />
           <ProductList setView={this.setView} />
         </>
       );
     } else if (this.state.view.name === 'cart') {
       return (
         <>
-          <Header text="Wicked Sales" cartItemCount={this.state.cart.length} setView={this.setView} />
+          <Header text="2020 Los Angeles Lakers Championship Store" cartItemCount={this.state.cart.length} setView={this.setView} />
           <CartSummary cartItems={this.state.cart} setView={this.setView} addToCart={this.addToCart} price={this.calculateTotal()}/>
         </>
       );
     } else if (this.state.view.name === 'details') {
       return (
         <>
-          <Header text="Wicked Sales" cartItemCount={this.state.cart.length} setView={this.setView} />
+          <Header text="2020 Los Angeles Lakers Championship Store" cartItemCount={this.state.cart.length} setView={this.setView} />
           <ProductDetails setView={this.setView} params={this.state.view.params} addToCart={this.addToCart} />
         </>
       );
     } else if (this.state.view.name === 'checkout') {
       return (
         <>
-          <Header text="Wicked Sales" cartItemCount={this.state.cart.length} setView={this.setView} />
+          <Header text="2020 Los Angeles Lakers Championship Store" cartItemCount={this.state.cart.length} setView={this.setView} />
           <CheckoutForm setView={this.setView} price={this.calculateTotal()} onSubmit={this.placeOrder} />
         </>
       );
