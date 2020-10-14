@@ -4,13 +4,14 @@ import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
+import Disclaimer from './disclaimer';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       view: {
-        name: 'catalog',
+        name: 'disclaimer',
         params: {}
       },
       cart: []
@@ -103,7 +104,14 @@ export default class App extends React.Component {
   }
 
   render() {
-    if (this.state.view.name === 'catalog') {
+    if (this.state.view.name === 'disclaimer') {
+      return (
+        <>
+          <Header text="2020 Los Angeles Lakers Championship Store" cartItemCount={this.state.cart.length} setView={this.setView} />
+          <Disclaimer setView={this.setView} />;
+        </>
+      );
+    } else if (this.state.view.name === 'catalog') {
       return (
         <>
           <Header text="2020 Los Angeles Lakers Championship Store" cartItemCount={this.state.cart.length} setView={this.setView} />

@@ -50,18 +50,21 @@ class CheckoutForm extends React.Component {
   render() {
     return (
       <div className="row">
-        <h2 className="mb-3 col-12">Your Cart</h2>
-        <h4 className="mb-3 col-12">Total amount: ${(this.props.price / 100).toFixed(2)}</h4>
-        <form className="order-details-container col-12 shadow-lg d-flex flex-column justify-content-center" onSubmit={this.handleSubmit}>
-          <label>Name</label>
+        <div className="mb-3 col-12 d-flex justify-content-between align-items-center">
+          <h2 className="white col-sm-8">Your Cart</h2>
+          <h5 className="col-sm-4 d-flex justify-content-end mt-4"><span>REMINDER: Please do NOT use any personal information!</span></h5>
+        </div>
+        <h4 className="mb-3 col-12 white">Total Amount: ${(this.props.price / 100).toFixed(2)}</h4>
+        <form className="col-12" onSubmit={this.handleSubmit}>
+          <label className="white">Name</label>
           <input type="text" value={this.state.name} onChange={this.changeName} className="d-block col-12 mb-3"/>
-          <label>Credit Card</label>
+          <label className="white">Credit Card</label>
           <input type="number" value={this.state.creditCard} onChange={this.changeCard} className="d-block col-12 mb-3"/>
-          <label>Shipping Address</label>
+          <label className="white">Shipping Address</label>
           <input type="textArea" rows="5" value={this.state.shippingAddress} onChange={this.changeAddress} className="d-block col-12 h-50"/>
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between align-items-center col-12 mt-4">
             <div className="ml-1 mt-4 continue-shopping" onClick={() => { this.props.setView('catalog', {}); }}>&lt; Continue Shopping</div>
-            <button type="submit" className="btn btn-primary mt-4">Place Order</button>
+            <button type="submit" className="btn btn-warning mt-4 d-flex justify-content-center">Place Order</button>
           </div>
         </form>
       </div>
