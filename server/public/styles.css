@@ -8,6 +8,16 @@ header {
   height: 2.5 rem;
 }
 
+.disclaimer {
+  background-color: #FDB927;
+  color:  #552583
+}
+
+h5 span {
+  background-color: #FDB927;
+  color:  #552583;
+}
+
 .icon-lakers {
   background-image: url("images/lakers-icon.png");
   background-size: cover;
