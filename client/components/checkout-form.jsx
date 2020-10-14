@@ -52,7 +52,7 @@ class CheckoutForm extends React.Component {
       <div className="row">
         <h2 className="mb-3 col-12">Your Cart</h2>
         <h4 className="mb-3 col-12">Total amount: ${(this.props.price / 100).toFixed(2)}</h4>
-        <form className="order-details-container col-12" onSubmit={this.handleSubmit}>
+        <form className="order-details-container col-12 shadow-lg d-flex flex-column justify-content-center" onSubmit={this.handleSubmit}>
           <label>Name</label>
           <input type="text" value={this.state.name} onChange={this.changeName} className="d-block col-12 mb-3"/>
           <label>Credit Card</label>

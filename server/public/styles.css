@@ -2,16 +2,25 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.header {
+header {
   width: 100vw;
   background-color: #FDB927;
   height: 2.5 rem;
 }
 
+.icon-lakers {
+  background-image: url("images/lakers-icon.png");
+  background-size: cover;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+}
+
 body {
   background: url("images/lakers-title.jpg");
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
+  overflow-x: hidden;
 }
 
 .title {
@@ -38,6 +47,10 @@ body {
 
 .back-to-catalog:hover{
   cursor: pointer;
+}
+
+.white {
+    color: white;
 }
 
 .product-detail-img {

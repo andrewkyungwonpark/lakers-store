@@ -2,12 +2,9 @@ import React from 'react';
 
 function Header(props) {
   return (
-    <header>
-      <div className="header row d-flex align-items-center">
-        <div className="col-1"></div>
-        <h4 className="title col align-self-center pt-2">{props.text}</h4>
-        <span className="items mb-0 mr-5">{props.cartItemCount}<i className="fas fa-shopping-cart" onClick={() => props.setView('cart', {})}></i></span>
-      </div>
+    <header className="row d-flex align-items-center justify-content-center">
+      <h4 className="title col align-items-center pt-2">{props.text}</h4>
+      <span className="items mb-0 mr-5">{props.cartItemCount}<i className="fas fa-shopping-cart" onClick={() => props.setView('cart', {})}></i></span>
     </header>
   );
 }
