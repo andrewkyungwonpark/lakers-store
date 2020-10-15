@@ -40,7 +40,7 @@ class ProductDetails extends React.Component {
       <div className="d-flex justify-content-center w-100">
         <div className="row d-flex justify-content-center mt-5 w-100">
           <div className="col-11 d-flex flex-wrap border border-dark shadow-lg justify-content-center p-3 bg-white">
-            <div className="back-to-catalog col-12 mb-2 text-muted" onClick={() => this.props.setView('catalog', {})}>&lt; Back to catalog</div>
+            <div className="back-to-catalog col-12 mb-2 text-muted" onClick={() => this.props.setView('catalog', {})}><span>&lt; Back to catalog</span></div>
             <img src={image} alt={name} className="col-6 mb-3"></img>
             <div className="col-6">
               <h2>{name}</h2>
