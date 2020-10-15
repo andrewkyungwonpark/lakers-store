@@ -3,7 +3,6 @@
 }
 
 header {
-  width: 100vw;
   background-color: #FDB927;
   height: 2.5 rem;
 }
@@ -23,7 +22,9 @@ div span {
   color:  #552583;
 }
 
-
+.container-flud {
+  padding: 0 !important;
+}
 
 .icon-lakers {
   background-image: url("images/lakers-icon.png");
@@ -33,11 +34,21 @@ div span {
   width: 25px;
 }
 
-body {
-  background: url("images/lakers-title.jpg");
-  background-repeat: no-repeat;
+html {
+  background: url("images/lakers-title.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+}
+
+body {
   overflow-x: hidden;
+}
+
+img {
+  background-size: cover;
+  width: auto;
 }
 
 .title {
@@ -53,11 +64,6 @@ body {
   height: 100vh;
   width: 100vw;
 }
-
-.container {
-  margin-left: 0;
-}
-
 .card:hover{
   cursor: pointer;
 }
@@ -82,9 +88,4 @@ body {
 .items:hover,
 .continue-shopping:hover {
   cursor: pointer;
-}
-
-.card-image {
-  object-fit: scale-down;
-  width: 75%
 }
