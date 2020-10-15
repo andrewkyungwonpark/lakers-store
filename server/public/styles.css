@@ -13,10 +13,17 @@ header {
   color:  #552583
 }
 
-h5 span {
+h5 span,
+h4 span,
+h2 span,
+h1 span,
+h3 span,
+div span {
   background-color: #FDB927;
   color:  #552583;
 }
+
+
 
 .icon-lakers {
   background-image: url("images/lakers-icon.png");

@@ -5,9 +5,9 @@ export default function CartSummary(props) {
   if (props.cartItems.length) {
     return (
       <>
-        <div className="back-to-catalog white mb-2" onClick={() => props.setView('catalog', {})}>&lt; Back to catalog</div>
-        <h1 className="white d-flex justify-content-center">Cart Summary</h1>
-        <h3 className="mb-3 white d-flex justify-content-center">Your Total is ${((props.price) / 100).toFixed(2)}</h3>
+        <div className="back-to-catalog white mb-2" onClick={() => props.setView('catalog', {})}><span>&lt; Back to catalog</span></div>
+        <h1 className="white d-flex justify-content-center"><span>Cart Summary</span></h1>
+        <h3 className="mb-3 white d-flex justify-content-center"><span>Your Total is ${((props.price) / 100).toFixed(2)}</span></h3>
         <div className="d-flex justify-content-center flex-column align-items-center">
           {
             props.cartItems.map(item => {
@@ -32,8 +32,8 @@ export default function CartSummary(props) {
   } else {
     return (
       <>
-        <div className="back-to-catalog col-12 mb-2 white" onClick={() => props.setView('catalog', {})}>&lt; Back to catalog</div>
-        <h2 className="d-flex justify-content-center mt-5 vw-100 white">Your cart is empty!</h2>
+        <div className="back-to-catalog col-12 mb-2 white" onClick={() => props.setView('catalog', {})}><span>&lt; Back to catalog</span></div>
+        <h2 className="d-flex justify-content-center mt-5 vw-100 white"><span>Your cart is empty!</span></h2>
       </>
     );
   }
