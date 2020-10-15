@@ -26,6 +26,11 @@ Try the application live at [https://lakers-store.andrewkpark.com](https://laker
 - User can place an order
 
 ## Preview
+![lakers store 1](https://user-images.githubusercontent.com/67514987/96166864-6c222f00-0ed3-11eb-9dbe-513d73cccf11.jpg)
+![lakers store 2](https://user-images.githubusercontent.com/67514987/96166880-6f1d1f80-0ed3-11eb-9f73-e816ac499c33.jpg)
+![lakers store 3](https://user-images.githubusercontent.com/67514987/96166878-6e848900-0ed3-11eb-8350-71b8fe0d63b5.png)
+![lakers store 4](https://user-images.githubusercontent.com/67514987/96166875-6debf280-0ed3-11eb-9ab3-28cf1141b533.jpg)
+![lakers store 5](https://user-images.githubusercontent.com/67514987/96166872-6d535c00-0ed3-11eb-9cff-4238d32cc8a8.jpg)
 
 
 ## Development
