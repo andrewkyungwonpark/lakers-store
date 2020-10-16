@@ -56,15 +56,15 @@ class CheckoutForm extends React.Component {
         </div>
         <h4 className="mb-3 col-12 white"><span>Total Amount: ${(this.props.price / 100).toFixed(2)}</span></h4>
         <form className="col-12" onSubmit={this.handleSubmit}>
-          <label className="white">Name</label>
+          <label className="white"><span>Name</span></label>
           <input type="text" value={this.state.name} onChange={this.changeName} className="d-block col-12 mb-3"/>
-          <label className="white">Credit Card</label>
+          <label className="white"><span>Credit Card</span></label>
           <input type="number" value={this.state.creditCard} onChange={this.changeCard} className="d-block col-12 mb-3"/>
-          <label className="white">Shipping Address</label>
+          <label className="white"><span>Shipping Address</span></label>
           <input type="textArea" rows="5" value={this.state.shippingAddress} onChange={this.changeAddress} className="d-block col-12 h-50"/>
           <div className="d-flex justify-content-between align-items-center col-12 mt-4">
             <h5 className="ml-1 mt-4 continue-shopping" onClick={() => { this.props.setView('catalog', {}); }}><span>&lt; Continue Shopping</span></h5>
-            <button type="submit" className="btn btn-warning mt-4 d-flex justify-content-end" disabled={!this.state.name || !this.state.creditCard || !this.state.shippingAddress}>Place Order</button>
+            <button type="submit" className="btn btn-warning mt-4 mb-4 d-flex justify-content-end" disabled={!this.state.name || !this.state.creditCard || !this.state.shippingAddress}>Place Order</button>
           </div>
         </form>
       </div>
