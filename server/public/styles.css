@@ -5,11 +5,17 @@
 header {
   background-color: #FDB927;
   height: 2.5 rem;
+  width: auto;
 }
 
 .disclaimer {
   background-color: #FDB927;
   color:  #552583
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0
 }
 
 h5 span,
@@ -20,10 +26,6 @@ h3 span,
 div span {
   background-color: #FDB927;
   color:  #552583;
-}
-
-.container-flud {
-  padding: 0 !important;
 }
 
 .icon-lakers {
@@ -46,6 +48,11 @@ body {
   overflow-x: hidden;
 }
 
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
 img {
   background-size: cover;
   width: auto;
@@ -61,8 +68,8 @@ img {
 
 .card-grid {
   margin-left: 0;
-  height: 100vh;
-  width: 100vw;
+  height: auto;
+  width: auto;
 }
 .card:hover{
   cursor: pointer;

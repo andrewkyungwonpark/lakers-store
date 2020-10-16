@@ -8,7 +8,7 @@ export default function CartSummary(props) {
         <div className="back-to-catalog white mb-2" onClick={() => props.setView('catalog', {})}><span>&lt; Back to catalog</span></div>
         <h1 className="d-flex justify-content-center"><span>Cart Summary</span></h1>
         <h3 className="mb-3 white d-flex justify-content-center"><span>Your Total is ${((props.price) / 100).toFixed(2)}</span></h3>
-        <div className="d-flex justify-content-center flex-column align-items-center">
+        <div className="d-flex justify-content-center flex-column align-items-center mt-3 mr-1 ml-1">
           {
             props.cartItems.map(item => {
               return (
