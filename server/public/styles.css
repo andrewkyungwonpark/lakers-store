@@ -55,7 +55,7 @@ body {
 
 img {
   background-size: cover;
-  width: auto;
+  width: 300px;
 }
 
 .title {
